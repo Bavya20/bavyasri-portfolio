@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, ArrowRight, Star, Code, Zap } from "lucide-react";
@@ -6,14 +5,14 @@ import { Github, ArrowRight, Star, Code, Zap } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Gesture-Based Blockchain Voting System",
-      description: "Revolutionary voting system using nose/eyebrow gestures for accessibility. Features secure blockchain logic, Flask backend, and virtual keyboard interface.",
-      tools: ["Python", "OpenCV", "Dlib", "Flask", "SQLite", "Blockchain"],
-      role: "Gesture Interface Developer & Flask Integrator",
+      title: "Gesture-Based Voting System",
+      description: "Revolutionary voting system using nose/eyebrow gestures for accessibility. Features Django backend with secure authentication, Flask integration, and virtual keyboard interface.",
+      tools: ["Python", "OpenCV", "Dlib", "Django", "Flask", "SQLite"],
+      role: "Gesture Interface Developer & Django Backend Developer",
       featured: true,
       achievements: [
         "Gesture recognition with 95% accuracy",
-        "Secure blockchain voting implementation",
+        "Secure Django backend with user authentication",
         "Accessible interface for disabled users",
         "Real-time gesture tracking"
       ]
