@@ -52,7 +52,7 @@ const About = () => {
                     <h3 className="font-bold text-sage-800 text-xl">Education</h3>
                   </div>
                   <p className="text-sage-600 leading-relaxed">
-                    Currently pursuing my passion for technology and innovation through hands-on projects and continuous learning.
+                    Currently pursuing my passion for technology and innovation through hands-on projects and continuous learning at SASTRA University.
                   </p>
                 </div>
               </div>
