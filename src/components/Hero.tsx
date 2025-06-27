@@ -101,18 +101,22 @@ const Hero = () => {
         {/* Profile Image */}
         <div className="order-1 lg:order-2 flex justify-center">
           <div className="relative group">
-            {/* Main Image Container */}
+            {/* Main Image Container with Rectangular Mask */}
             <div className="relative z-10">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 transition-all duration-700 border-4 border-white/50 backdrop-blur-sm">
-                <img 
-                  src="/lovable-uploads/a28df26f-bb57-4f7b-8cea-a4153159e732.png" 
-                  alt="Saravana Bavya Sri" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+              <div className="w-80 h-96 md:w-96 md:h-[28rem] overflow-hidden shadow-2xl transform group-hover:scale-105 transition-all duration-700 border-4 border-white/50 backdrop-blur-sm bg-white/10 rounded-2xl">
+                <div className="w-full h-full relative">
+                  {/* Rectangular mask overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sage-800/10 z-10 rounded-2xl"></div>
+                  <img 
+                    src="/lovable-uploads/747ee52e-0da3-47f7-b698-f617cc01ea75.png" 
+                    alt="Saravana Bavya Sri" 
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
               </div>
               
               {/* Glassmorphism Overlay */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-sage-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-sage-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             {/* Floating Elements */}
@@ -121,7 +125,7 @@ const Hero = () => {
             <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-sage-100 to-sage-200 rounded-full opacity-50 animate-pulse delay-1000"></div>
             
             {/* Glow Effect */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-sage-400/20 to-sage-500/20 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-sage-400/20 to-sage-500/20 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </div>
