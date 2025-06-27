@@ -1,10 +1,7 @@
-
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sage-50 via-white to-sage-100">
         <div className="absolute top-20 left-10 w-72 h-72 bg-sage-200/30 rounded-full blur-3xl animate-pulse"></div>
@@ -46,26 +43,16 @@ const Hero = () => {
                 </span>
               </p>
               
-              <p className="text-lg text-sage-600 max-w-2xl leading-relaxed opacity-90">
-                Passionate Python developer turning innovative ideas into impactful technology. 
-                Specializing in gesture-based applications and modern web development.
-              </p>
+              <p className="text-lg text-sage-600 max-w-2xl leading-relaxed opacity-90">Passionate full-stack developer blending creativity with code — from gesture-based interfaces to modern web apps using Python, Django, and React. Always curious, always building.</p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button 
-                size="lg" 
-                className="group bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl shadow-lg"
-              >
+              <Button size="lg" className="group bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl shadow-lg">
                 <span className="mr-2">View My Work</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-sage-300 bg-white/80 backdrop-blur-sm text-sage-700 hover:bg-sage-50 hover:border-sage-400 px-8 py-4 rounded-2xl transition-all duration-500 hover:shadow-xl shadow-md"
-              >
+              <Button variant="outline" size="lg" className="border-2 border-sage-300 bg-white/80 backdrop-blur-sm text-sage-700 hover:bg-sage-50 hover:border-sage-400 px-8 py-4 rounded-2xl transition-all duration-500 hover:shadow-xl shadow-md">
                 Let's Connect
               </Button>
             </div>
@@ -75,22 +62,13 @@ const Hero = () => {
               <span className="text-sage-500 text-sm font-medium tracking-wide">Follow me</span>
               <div className="h-px bg-gradient-to-r from-sage-300 to-transparent w-16"></div>
               <div className="flex space-x-4">
-                <a 
-                  href="https://github.com/Bavya20" 
-                  className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                >
+                <a href="https://github.com/Bavya20" className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg">
                   <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
-                  href="https://linkedin.com/in/saravana-bavya-sri-3200272b5" 
-                  className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                >
+                <a href="https://linkedin.com/in/saravana-bavya-sri-3200272b5" className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg">
                   <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
-                  href="mailto:bavyasri2010@gmail.com" 
-                  className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                >
+                <a href="mailto:bavyasri2010@gmail.com" className="group p-3 bg-white/80 backdrop-blur-sm border border-sage-200/50 rounded-xl text-sage-600 hover:text-sage-800 hover:bg-sage-50 transition-all duration-300 hover:scale-110 hover:shadow-lg">
                   <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
               </div>
@@ -107,11 +85,7 @@ const Hero = () => {
                 <div className="w-full h-full relative">
                   {/* Rectangular mask overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sage-800/10 z-10 rounded-2xl"></div>
-                  <img 
-                    src="/lovable-uploads/747ee52e-0da3-47f7-b698-f617cc01ea75.png" 
-                    alt="Saravana Bavya Sri" 
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                  />
+                  <img src="/lovable-uploads/747ee52e-0da3-47f7-b698-f617cc01ea75.png" alt="Saravana Bavya Sri" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700" />
                 </div>
               </div>
               
@@ -135,8 +109,6 @@ const Hero = () => {
         <span className="text-sm font-medium tracking-wide">Scroll to explore</span>
         <div className="w-px h-12 bg-gradient-to-b from-sage-400 to-transparent animate-pulse"></div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
