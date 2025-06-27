@@ -1,12 +1,80 @@
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, User, Github, Linkedin, Send, MapPin, Phone } from "lucide-react";
+import { Mail, User, Github, Linkedin, Send, MapPin, Phone, Loader } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { toast } from "sonner";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const validateForm = () => {
+    if (!formData.name.trim()) {
+      toast.error("Please enter your name");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email");
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return false;
+    }
+    if (!formData.message.trim()) {
+      toast.error("Please enter your message");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_kap5ef8', // Service ID
+        'template_pwckzin', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Saravana Bavya Sri',
+        },
+        'nNJGCNjKBhFe2Oafz' // Public Key
+      );
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast.error("Failed to send message. Please try again or contact me directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-sage-50/50 via-white to-sage-100/30 relative overflow-hidden">
       {/* Background Elements */}
@@ -114,41 +182,66 @@ const Contact = () => {
               </CardHeader>
               
               <CardContent className="space-y-6 relative z-10">
-                <div className="space-y-3">
-                  <Label htmlFor="name" className="text-sage-700 font-semibold">Name</Label>
-                  <Input 
-                    id="name" 
-                    placeholder="Your name"
-                    className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg"
-                  />
-                </div>
-                
-                <div className="space-y-3">
-                  <Label htmlFor="email" className="text-sage-700 font-semibold">Email</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="your.email@example.com"
-                    className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg"
-                  />
-                </div>
-                
-                <div className="space-y-3">
-                  <Label htmlFor="message" className="text-sage-700 font-semibold">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell me about your project..."
-                    rows={5}
-                    className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg resize-none"
-                  />
-                </div>
-                
-                <Button 
-                  className="w-full bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white py-4 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl group/btn"
-                >
-                  <span className="mr-2">Send Message</span>
-                  <Send className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-sage-700 font-semibold">Name</Label>
+                    <Input 
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name"
+                      className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-sage-700 font-semibold">Email</Label>
+                    <Input 
+                      id="email"
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your.email@example.com"
+                      className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <Label htmlFor="message" className="text-sage-700 font-semibold">Message</Label>
+                    <Textarea 
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell me about your project..."
+                      rows={5}
+                      className="border-sage-200/50 focus:border-sage-400 focus:ring-sage-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md focus:shadow-lg resize-none"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white py-4 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl group/btn disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader className="h-4 w-4 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <span className="mr-2">Send Message</span>
+                        <Send className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
