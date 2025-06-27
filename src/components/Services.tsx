@@ -1,30 +1,23 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Settings, User, Sparkles } from "lucide-react";
-
 const Services = () => {
-  const services = [
-    {
-      icon: <Settings className="h-8 w-8" />,
-      title: "Mini Project Prototyping",
-      description: "I love working on tech projects that solve real-world problems — from gesture-controlled interfaces to smart, user-friendly web apps.",
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: <Code className="h-8 w-8" />,
-      title: "Frontend Development",
-      description: "Built and deployed responsive landing pages using modern stacks like Next.js, Tailwind CSS, and GSAP animations.",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: <User className="h-8 w-8" />,
-      title: "Python Development",
-      description: "Custom Python solutions for web applications, automation, and innovative projects with modern frameworks.",
-      gradient: "from-green-500 to-emerald-500"
-    }
-  ];
-
-  return (
-    <section id="services" className="py-24 bg-gradient-to-br from-white via-sage-50/30 to-sage-100/50 relative overflow-hidden">
+  const services = [{
+    icon: <Settings className="h-8 w-8" />,
+    title: "Mini Project Prototyping",
+    description: "I love working on tech projects that solve real-world problems — from gesture-controlled interfaces to smart, user-friendly web apps.",
+    gradient: "from-blue-500 to-cyan-500"
+  }, {
+    icon: <Code className="h-8 w-8" />,
+    title: "Frontend Development",
+    description: "Built and deployed responsive landing pages using modern stacks like Next.js, Tailwind CSS, and GSAP animations.",
+    gradient: "from-purple-500 to-pink-500"
+  }, {
+    icon: <User className="h-8 w-8" />,
+    title: "Python Development",
+    description: "Custom Python solutions for web applications, automation, and innovative projects with modern frameworks.",
+    gradient: "from-green-500 to-emerald-500"
+  }];
+  return <section id="services" className="py-24 bg-gradient-to-br from-white via-sage-50/30 to-sage-100/50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-20 left-10 w-80 h-80 bg-sage-200/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-sage-300/15 rounded-full blur-3xl animate-pulse delay-700"></div>
@@ -39,18 +32,13 @@ const Services = () => {
             Services
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-sage-400 to-sage-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">
-            Specialized services that bring your ideas to life through innovative technology
-          </p>
+          <p className="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">Specialized services that bring ideas to life through innovative technology</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index}
-              className="group relative text-center border-sage-200/50 hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm overflow-hidden animate-slide-up"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
+          {services.map((service, index) => <Card key={index} className="group relative text-center border-sage-200/50 hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm overflow-hidden animate-slide-up" style={{
+          animationDelay: `${index * 200}ms`
+        }}>
               {/* Card Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-sage-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
@@ -85,12 +73,9 @@ const Services = () => {
                 {/* Bottom Accent Line */}
                 <div className="mt-6 w-0 h-1 bg-gradient-to-r from-sage-400 to-sage-600 mx-auto rounded-full group-hover:w-16 transition-all duration-500"></div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Services;
