@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Settings, User, Sparkles } from "lucide-react";
 
@@ -7,7 +6,7 @@ const Services = () => {
     {
       icon: <Settings className="h-8 w-8" />,
       title: "Mini Project Prototyping",
-      description: "I love working on innovative tech ideas like gesture-controlled interfaces and interactive apps.",
+      description: "I love working on tech projects that solve real-world problems — from gesture-controlled interfaces to smart, user-friendly web apps.",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
