@@ -43,7 +43,7 @@ const Hero = () => {
                 </span>
               </p>
               
-              <p className="text-lg text-sage-600 max-w-2xl leading-relaxed opacity-90">Passionate full-stack developer blending creativity with code — from gesture-based interfaces to modern web apps using Python, Django, and React. Always curious, always building.</p>
+              <p className="text-lg text-sage-600 max-w-2xl leading-relaxed opacity-90">Passionate developer blending creativity with code — from gesture-based interfaces to modern web apps using Python, Django, and React. Always curious, always building.</p>
             </div>
 
             {/* CTA Buttons */}
