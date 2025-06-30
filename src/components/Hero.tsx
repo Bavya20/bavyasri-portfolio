@@ -1,6 +1,17 @@
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sage-50 via-white to-sage-100">
@@ -48,11 +59,20 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button size="lg" className="group bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl shadow-lg">
+              <Button 
+                size="lg" 
+                className="group bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                onClick={() => scrollToSection('projects')}
+              >
                 <span className="mr-2">View My Work</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-sage-300 bg-white/80 backdrop-blur-sm text-sage-700 hover:bg-sage-50 hover:border-sage-400 px-8 py-4 rounded-2xl transition-all duration-500 hover:shadow-xl shadow-md">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-sage-300 bg-white/80 backdrop-blur-sm text-sage-700 hover:bg-sage-50 hover:border-sage-400 px-8 py-4 rounded-2xl transition-all duration-500 hover:shadow-xl shadow-md"
+                onClick={() => scrollToSection('contact')}
+              >
                 Let's Connect
               </Button>
             </div>
@@ -111,4 +131,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
