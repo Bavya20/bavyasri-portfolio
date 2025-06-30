@@ -20,12 +20,12 @@ const Projects = () => {
       ]
     },
     {
-      title: "Custom Landing Page",
-      description: "Modern, responsive landing page with smooth animations and interactive elements.",
-      tools: ["Next.js", "Tailwind CSS", "GSAP", "Netlify"],
-      role: "Frontend Developer",
+      title: "Django Telegram Bot Integration",
+      description: "Backend system with bot-powered user interaction and background task handling.",
+      tools: ["Django", "Django REST Framework", "Celery + Redis", "Telegram Bot API", "SQLite/PostgreSQL"],
+      role: "Backend Developer",
       featured: false,
-      githubUrl: "https://github.com/Bavya20/landing-clean.git"
+      githubUrl: "https://github.com/Bavya20/django-intern-project.git"
     }
   ];
 
