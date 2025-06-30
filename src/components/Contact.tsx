@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -153,6 +154,12 @@ const Contact = () => {
                     className="group/link w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-800 text-white rounded-2xl flex items-center justify-center hover:from-gray-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
                   >
                     <Github className="h-6 w-6 group-hover/link:scale-110 transition-transform" />
+                  </a>
+                  <a 
+                    href="mailto:bavyasri2010@gmail.com"
+                    className="group/link w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 text-white rounded-2xl flex items-center justify-center hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
+                  >
+                    <Mail className="h-6 w-6 group-hover/link:scale-110 transition-transform" />
                   </a>
                 </div>
               </div>
