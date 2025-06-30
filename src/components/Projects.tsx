@@ -1,6 +1,7 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, ArrowRight, Star, Code, Zap } from "lucide-react";
+import { Github, Star, Code, Zap } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -10,6 +11,7 @@ const Projects = () => {
       tools: ["Python", "OpenCV", "Dlib", "Django", "Flask", "SQLite"],
       role: "Gesture Interface Developer & Django Backend Developer",
       featured: true,
+      githubUrl: "https://github.com/Bavya20/Smart-E-voting-System.git",
       achievements: [
         "Gesture recognition with 95% accuracy",
         "Secure Django backend with user authentication",
@@ -22,7 +24,8 @@ const Projects = () => {
       description: "Modern, responsive landing page with smooth animations and interactive elements.",
       tools: ["Next.js", "Tailwind CSS", "GSAP", "Netlify"],
       role: "Frontend Developer",
-      featured: false
+      featured: false,
+      githubUrl: "https://github.com/Bavya20/landing-clean.git"
     }
   ];
 
@@ -127,13 +130,10 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     className="group/btn border-sage-300 text-sage-700 hover:bg-sage-50 hover:border-sage-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
                   >
                     <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
                     View Code
-                  </Button>
-                  <Button className="group/btn bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                    Live Demo 
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </CardContent>
