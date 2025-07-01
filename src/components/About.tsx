@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 
 const About = () => {
@@ -6,7 +5,7 @@ const About = () => {
     languages: ["Python", "Java", "C++"],
     web: ["HTML", "CSS", "JavaScript", "Django"],
     databases: ["SQL", "MongoDB"],
-    tools: ["VS Code", "Excel", "Forage", "Unstop"],
+    tools: ["VS Code", "Git", "Forage", "Unstop"],
     core: ["DSA", "OOP", "System Design", "Networking"]
   };
 
